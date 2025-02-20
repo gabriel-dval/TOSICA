@@ -14,7 +14,7 @@ import math
 import torch
 import torch.optim as optim
 import torch.optim.lr_scheduler as lr_scheduler
-#from torch.utils.tensorboard import SummaryWriter
+from torch.utils.tensorboard import SummaryWriter
 import time
 import platform
 
@@ -88,7 +88,7 @@ def splitDataSet(adata,label_name='Celltype', tr_ratio= 0.7):
 
 def get_gmt(gmt):
     import pathlib
-    root = pathlib.Path(__file__).parent
+    root = pathlib.Path(__file__).parent.parent
     gmt_files = {
         "human_gobp": [root / "resources/GO_bp.gmt"],
         "human_immune": [root / "resources/immune.gmt"],

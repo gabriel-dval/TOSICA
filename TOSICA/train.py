@@ -276,7 +276,7 @@ def fit_model(adata, gmt_path, project = None, pre_weights='', label_name='Cellt
     #for name, param in model.named_parameters():
     #    if param.requires_grad:
     #        print(name) 
-    print('Model builded!')
+    print('Model built!')
     pg = [p for p in model.parameters() if p.requires_grad]  
     optimizer = optim.SGD(pg, lr=lr, momentum=0.9, weight_decay=5E-5) 
     lf = lambda x: ((1 + math.cos(x * math.pi / epochs)) / 2) * (1 - lrf) + lrf  
